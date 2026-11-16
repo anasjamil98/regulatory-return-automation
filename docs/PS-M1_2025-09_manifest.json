@@ -1,0 +1,143 @@
+{
+  "run_id": "PS-M1-2025-09-20261115T171621",
+  "form": "PS-M1 (fictional)",
+  "period": "2025-09",
+  "status": "released_with_warnings",
+  "generated_at_utc": "2026-11-15 17:16:21",
+  "pipeline_version": "1.0.0",
+  "inputs": {
+    "database_sha256": "e952c62703384e6c71096caeacc16ba6dbd1729f86a3e50f7c02f518a3719ef5",
+    "sql_sha256": {
+      "return_lines.sql": "4c7a5d32db6136950425c03eae67b24b5f54b1a421a926f9fd788a8916e2e1ba",
+      "stg_transactions.sql": "9d27eea6596981d8091d4f804898122d853e7318493fe47a101d9907bad027da"
+    },
+    "variance_threshold": 0.1,
+    "prior_period": "2025-08"
+  },
+  "lines": {
+    "A1": {
+      "count": 3629,
+      "value_minor": null
+    },
+    "A2": {
+      "count": 99,
+      "value_minor": null
+    },
+    "A3": {
+      "count": 2646,
+      "value_minor": null
+    },
+    "B1": {
+      "count": 5059,
+      "value_minor": 30183901
+    },
+    "B2": {
+      "count": 3587,
+      "value_minor": 8724336
+    },
+    "B3": {
+      "count": 3147,
+      "value_minor": 13692563
+    },
+    "B4": {
+      "count": 1941,
+      "value_minor": 12435276
+    },
+    "B5": {
+      "count": 2145,
+      "value_minor": 33762502
+    },
+    "B6": {
+      "count": 890,
+      "value_minor": 9322627
+    },
+    "B9": {
+      "count": 16769,
+      "value_minor": 108121205
+    },
+    "C1": {
+      "count": 1055,
+      "value_minor": 6914877
+    },
+    "C2": {
+      "count": 271,
+      "value_minor": 1674537
+    },
+    "D1": {
+      "count": 2831,
+      "value_minor": 190283
+    }
+  },
+  "checks": [
+    {
+      "name": "line_set",
+      "severity": "fail",
+      "passed": true,
+      "detail": "all lines present"
+    },
+    {
+      "name": "every_day_present",
+      "severity": "fail",
+      "passed": true,
+      "detail": "30 of 30 days have transactions"
+    },
+    {
+      "name": "unique_transaction_ids",
+      "severity": "fail",
+      "passed": true,
+      "detail": "18426 rows, 18426 distinct ids"
+    },
+    {
+      "name": "status_domain",
+      "severity": "fail",
+      "passed": true,
+      "detail": "0 rows with an unrecognised status"
+    },
+    {
+      "name": "amounts_valid",
+      "severity": "fail",
+      "passed": true,
+      "detail": "0 rows with a missing, zero or negative amount"
+    },
+    {
+      "name": "control_total",
+      "severity": "fail",
+      "passed": true,
+      "detail": "return: 16769 txns / 108121205 minor; independent: 16769 txns / 108121205 minor"
+    },
+    {
+      "name": "type_lines_sum_to_total",
+      "severity": "fail",
+      "passed": true,
+      "detail": "types: 16769 / 108121205; total line: (16769, 108121205)"
+    },
+    {
+      "name": "status_reconciliation",
+      "severity": "fail",
+      "passed": true,
+      "detail": "18095 reported of 18095 rows"
+    },
+    {
+      "name": "customer_counts_consistent",
+      "severity": "fail",
+      "passed": true,
+      "detail": "registered=3629 new=99 active=2646"
+    },
+    {
+      "name": "test_accounts_excluded",
+      "severity": "fail",
+      "passed": true,
+      "detail": "0 test-account rows in staging"
+    },
+    {
+      "name": "variance_vs_prior_period",
+      "severity": "warn",
+      "passed": false,
+      "detail": "A2 count -22.7%; C1 count +15.0%; C1 value +20.5%"
+    }
+  ],
+  "output": {
+    "file": "PS-M1_2025-09.xlsx",
+    "sha256": "eb3c5c4ced4e6291271fd09b4b3d761c3398f8f14c66f8c1b4280fc9b73cf3dc"
+  }
+}
